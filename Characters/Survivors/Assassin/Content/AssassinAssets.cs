@@ -61,7 +61,7 @@ namespace AssassinMod.Survivors.Assassin
 
             string assassin_skele = "rogue_emote_skeleton.prefab";
             System.Random rnd = new System.Random();
-            if (rnd.Next(0, 100) <= 1)
+            if (rnd.Next(0, 100) <= 2)
             {
                 assassin_skele = "rogue_emote_skeleton_tiny.prefab";
                 Log.Info("Little guy :3");

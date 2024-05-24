@@ -7,6 +7,9 @@ using UnityEngine;
 using RoR2.CharacterAI;
 using UnityEngine.Networking;
 using System.Collections.Generic;
+using static EmotesAPI.CustomEmotesAPI;
+using System.Runtime.CompilerServices;
+using AssassinMod.Survivors.Assassin;
 
 namespace AssassinMod.Characters.Entities.Decoy
 {
@@ -20,6 +23,28 @@ namespace AssassinMod.Characters.Entities.Decoy
         public override void OnEnter()
         {
             base.OnEnter();
+
+            var owner = characterBody?.master?.GetComponent<AIOwnership>()?.ownerMaster?.GetBody();
+            if (owner)
+            {
+                var skinc = owner.modelLocator.modelTransform.GetComponent<ModelSkinController>();
+                skinc.skins[skinc.currentSkinIndex].Apply(modelLocator.modelTransform.gameObject);
+                //Chat.AddMessage($"Setting decoy skin \nOwner {owner}\nSkinc {skinc}");
+            }
+
+            PlayEmote();
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private void PlayEmote()
+        {
+            // Play a random emote
+            int rand = UnityEngine.Random.Range(0, allClipNames.Count);
+            while (blacklistedClips.Contains(rand))
+            {
+                rand = UnityEngine.Random.Range(0, allClipNames.Count);
+            }
+            EmotesAPI.CustomEmotesAPI.PlayAnimation(allClipNames[rand], modelLocator.modelTransform.GetComponent<BoneMapper>());
         }
 
         public override void OnExit()

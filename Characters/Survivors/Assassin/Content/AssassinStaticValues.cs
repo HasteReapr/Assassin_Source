@@ -5,7 +5,7 @@ namespace AssassinMod.Survivors.Assassin
 {
     public static class AssassinStaticValues
     {
-        public const float daggerDamageCoef = 1.35f;
+        public const float daggerDamageCoef = 1.25f;
 
         public const float cutterDamageCoef = 1.5f;
 

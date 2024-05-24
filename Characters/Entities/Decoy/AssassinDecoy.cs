@@ -9,11 +9,10 @@ using EntityStates;
 using AssassinMod.Survivors.Assassin;
 using RoR2.Skills;
 using AssassinMod.Characters.Entities.Decoy;
-using static EmotesAPI.CustomEmotesAPI;
 
 namespace AssassinMod.Characters.Entities.Decoy
 {
-    // ModelSetup and SetupHurtBox are from https://github.com/MonsterSkinMan/GOTCE/blob/main/GOTCE/Enemies/EnemyBase.cs
+    // Taken from https://github.com/MonsterSkinMan/GOTCE/blob/main/GOTCE/Enemies/EnemyBase.cs
     public class AssassinDecoy : DecoyBase<AssassinDecoy>
     {
         public override string PathToClone => "RoR2/Junk/Bandit/BanditBody.prefab";
@@ -87,6 +86,16 @@ namespace AssassinMod.Characters.Entities.Decoy
 
             prefab.GetComponent<CharacterDeathBehavior>().deathState = new SerializableEntityStateType(typeof(DecoyDeath));
             prefabMaster.GetComponent<CharacterMaster>().bodyPrefab = prefab;
+            prefabMaster.AddComponent<AIOwnership>();
+
+            foreach (var skin in prefab.GetComponent<ModelLocator>().modelTransform.gameObject.GetComponent<ModelSkinController>().skins)
+            {
+                HG.ArrayUtils.ArrayAppend(ref skin.minionSkinReplacements, new SkinDef.MinionSkinReplacement
+                {
+                    minionBodyPrefab = prefab,
+                    minionSkin = skin
+                });
+            }
         }
 
         public override void PostCreation()

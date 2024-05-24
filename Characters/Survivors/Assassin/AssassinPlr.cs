@@ -18,22 +18,17 @@ namespace AssassinMod.Survivors.Assassin
 {
     public class AssassinPlr : SurvivorBase<AssassinPlr>
     {
-        //used to load the assetbundle for this character. must be unique
         public override string assetBundleName => "ror2assassin";
 
-        //the name of the prefab we will create. conventionally ending in "Body". must be unique
-        public override string bodyName => "AssassinSurvivorBody"; //if you do not change this, you get the point by now
+        public override string bodyName => "AssassinSurvivorBody";
 
-        //name of the ai master for vengeance and goobo. must be unique
-        public override string masterName => "AssassinMonsterMaster"; //if you do not
+        public override string masterName => "AssassinMonsterMaster";
 
-        //the names of the prefabs you set up in unity that we will use to build your character
         public override string modelPrefabName => "mdlAssassin";
         public override string displayPrefabName => "AssassinDisplay";
 
         public const string ASSASSIN_PREFIX = AssassinPlugin.DEVELOPER_PREFIX + "_ASSASSIN_";
 
-        //used when registering your survivor's language tokens
         public override string survivorTokenPrefix => ASSASSIN_PREFIX;
 
         private const string csProjName = "AssassinMod";

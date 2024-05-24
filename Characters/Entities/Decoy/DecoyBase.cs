@@ -12,6 +12,7 @@ using AssassinMod.Survivors.Assassin;
 
 namespace AssassinMod.Characters.Entities.Decoy
 {
+    // Taken from https://github.com/MonsterSkinMan/GOTCE/blob/main/GOTCE/Enemies/EnemyBase.cs
     public abstract class DecoyBase<T> : DecoyBase where T : DecoyBase<T>
     {
         public static T Instance { get; private set; }
