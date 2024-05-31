@@ -148,7 +148,7 @@ namespace AssassinMod.Survivors.Assassin
             ProjectileController daggerController = dagger.GetComponent<ProjectileController>();
             daggerController.rigidbody = daggerRigidBody;
             daggerController.rigidbody.useGravity = true;
-            daggerController.procCoefficient = 0.9f;
+            daggerController.procCoefficient = 0.85f;
 
             daggerController.GetComponent<ProjectileStickOnImpact>().alignNormals = false;
 
@@ -186,7 +186,7 @@ namespace AssassinMod.Survivors.Assassin
             ProjectileController daggerController = cutter.GetComponent<ProjectileController>();
             daggerController.rigidbody = daggerRigidBody;
             daggerController.rigidbody.useGravity = true;
-            daggerController.procCoefficient = 0.9f;
+            daggerController.procCoefficient = 0.8f;
 
             daggerController.GetComponent<ProjectileStickOnImpact>().alignNormals = false;
 

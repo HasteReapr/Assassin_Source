@@ -494,7 +494,7 @@ namespace AssassinMod.Survivors.Assassin
                activationState = new EntityStates.SerializableEntityStateType(typeof(ThrowDecoy)),
                activationStateMachineName = "Body",
                baseMaxStock = 1,
-               baseRechargeInterval = 8f,
+               baseRechargeInterval = 12f,
                beginSkillCooldownOnSkillEnd = false,
                canceledFromSprinting = false,
                forceSprintDuringState = false,

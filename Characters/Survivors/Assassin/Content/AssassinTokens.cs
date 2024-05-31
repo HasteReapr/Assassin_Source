@@ -10,7 +10,7 @@ namespace AssassinMod.Survivors.Assassin
     {
         public static void Init()
         {
-            AddHenryTokens();
+            AddAssassinTokens();
 
             ////uncomment this to spit out a lanuage file with all the above tokens that people can translate
             ////make sure you set Language.usingLanguageFolder and printingEnabled to true
@@ -18,7 +18,7 @@ namespace AssassinMod.Survivors.Assassin
             ////refer to guide on how to build and distribute your mod with the proper folders
         }
 
-        public static void AddHenryTokens()
+        public static void AddAssassinTokens()
         {
             string prefix = AssassinPlr.ASSASSIN_PREFIX;
 
@@ -32,7 +32,7 @@ namespace AssassinMod.Survivors.Assassin
                               "Their immense greed and a hatred for the alchemical society they grew up in led the Assassin down a dark path they could have never imagined. Consumed by greed and the desire to be famous, they turned their expertise to a darker purpose. They spent months brewing their deadliest potion, a neurotoxin so deadly it drained the life of any who inhaled the fumes. Knowing they couldn’t survive this, they made an anti-venom and infused their cloak with it.\n\n" +
                               "They gained notoriety as a relentless and elusive bounty hunter. Their services were sought by criminals and warlords alike, their poison becoming their signature assassination style, effectively serving as a calling card.They harnessed their brewing skills to make other potions, ones that could move their molecular structure around, and others that could make their body disappear in the blink of an eye.\n\n" +
                               "Iterating on their previous poison, they had come up with something much more virulent.This new poison was able to deliver all of its toxins almost instantly, with the side effect that it would linger in the air.This allowed them to kill entire rooms of people with a single potion.\n\n" +
-                              "The Assassin’s notoriety gained the attention of a mysterious figure who came to them offering a bounty they couldn’t refuse. They were tasked with killing the captain of the Safe Travels.Upon landing on Petrichor V they felt a powerful presence, one that they had the desire to kill.";
+                              "They were tasked with killing the Captain of the U.S.S. Safe Travels, however upon landing they felt a powerful otherwordly presence drawing them down a path ever darker, ever deeper.";
 
 
             string outro = "..and so they left, to claim their highest bounty.";
@@ -84,7 +84,7 @@ namespace AssassinMod.Survivors.Assassin
             
             #region AltPrimary
             LanguageAPI.Add(prefix + "PRIMARY_CUTTER_NAME", "Ghostly Dagger");
-            LanguageAPI.Add(prefix + "PRIMARY_CUTTER_DESCRIPTION", Tokens.agilePrefix + $"Throw 1 dagger for <style=cIsDamage>{100 * cutterDamageCoef * 0.2f}% to {100 * cutterDamageCoef * (2.75/cutterDamageCoef)}% damage</style>.");
+            LanguageAPI.Add(prefix + "PRIMARY_CUTTER_DESCRIPTION", Tokens.agilePrefix + $"Throw 1 dagger for <style=cIsDamage>{100 * cutterDamageCoef * 0.2f}% to {100 * cutterDamageCoef * (2f/cutterDamageCoef)}% damage</style>.");
             #endregion
 
             #region Secondary

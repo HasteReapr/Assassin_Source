@@ -16,7 +16,7 @@ namespace AssassinMod.Characters.Entities.Decoy
     // Taken from https://github.com/MonsterSkinMan/GOTCE/blob/main/GOTCE/EntityStatesCustom/AltSkills/Bandit/Decoy/DecoyTimer.cs
     public class DecoyTimer : BaseState
     {
-        public float duration = 5f;
+        public float duration = 3.5f;
         public float stopwatch = 0f;
         public float delay = 0.5f;
 

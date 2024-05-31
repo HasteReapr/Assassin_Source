@@ -40,15 +40,12 @@ namespace AssassinMod
 
         public static AssassinPlugin instance;
 
-        public static bool emoteAPILoaded = false;
-        public static bool scepterStandaloneLoaded = false;
+        public static bool emoteAPILoaded => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
+        public static bool scepterStandaloneLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
 
         void Awake()
         {
             instance = this;
-
-            emoteAPILoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
-            scepterStandaloneLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
 
             //easy to use logger
             Log.Init(Logger);
@@ -63,8 +60,11 @@ namespace AssassinMod
             Hook();
 
             // Adds compatability for Emote API (Badass Emotes)
-            EmoteAPICompat();
-            
+            if(emoteAPILoaded)
+                EmoteAPICompat();
+
+            Logger.LogMessage("Emote API Loaded : " + emoteAPILoaded);
+
             // Loads AssassinDecoy
             new AssassinDecoy().Create();
 
@@ -98,6 +98,7 @@ namespace AssassinMod
             };
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void CustomEmotesAPI_animChanged(string newAnimation, BoneMapper mapper)
         {
             if (newAnimation != "none")

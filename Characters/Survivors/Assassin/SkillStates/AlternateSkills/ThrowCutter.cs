@@ -63,7 +63,7 @@ namespace AssassinMod.Characters.Survivors.Assassin.SkillStates.AlternateSkills
             {
                 float lowVal = base.HasBuff(AssassinBuffs.assassinDrugsBuff) ? 0.5f : 0.2f;
 
-                float highVal = 2.75f / damageCoef;
+                float highVal = 2f / damageCoef;
                 FireProjectileInfo info = new FireProjectileInfo()
                 {
                     owner = gameObject,
