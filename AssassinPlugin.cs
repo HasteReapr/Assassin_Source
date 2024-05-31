@@ -26,6 +26,8 @@ namespace AssassinMod
 {
     //[BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
     public class AssassinPlugin : BaseUnityPlugin
@@ -143,7 +145,7 @@ namespace AssassinMod
         {
             if (self.body.HasBuff(AssassinBuffs.poisonDebuff))
             {
-                damageInfo.damage *= 1f + (0.1f * self.body.GetBuffCount(AssassinBuffs.poisonDebuff));
+                damageInfo.damage *= 1f + (0.025f * self.body.GetBuffCount(AssassinBuffs.poisonDebuff));
             }
 
             orig(self, damageInfo);
@@ -162,7 +164,7 @@ namespace AssassinMod
                         self.AddTimedBuff(AssassinBuffs.madGodBuff, 3);
                     }
                 }
-                else if (passiveCtrl.GetPassiveType() == 1) // Poison Passive
+                else if (passiveCtrl.GetPassiveType() == 1 && damageReport.attackerBody) // Poison Passive
                 {
                     // If we do not have the cooldown debuff or we are drugged we can shoot, otherwise we have a 4.5 second cooldown
                     if (!self.HasBuff(AssassinBuffs.terrorCD) || self.HasBuff(AssassinBuffs.assassinDrugsBuff))
@@ -186,7 +188,7 @@ namespace AssassinMod
                         // If we have the drugs buff we throw poison out regardless of cooldown, and don't apply the cooldown
                         if (!self.HasBuff(AssassinBuffs.assassinDrugsBuff))
                         {
-                            self.AddTimedBuff(AssassinBuffs.terrorCD, 4.5f);
+                            self.AddTimedBuff(AssassinBuffs.terrorCD, 4f);
                         }
                         
                     }

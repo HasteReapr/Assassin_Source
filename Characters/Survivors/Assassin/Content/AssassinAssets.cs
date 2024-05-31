@@ -46,6 +46,7 @@ namespace AssassinMod.Survivors.Assassin
 
         // Emote API compat
         internal static GameObject emoteAPISkeleton;
+        //internal static GameObject emoteAPIDecoySkeleton;
 
         // Damage types
         public static ModdedDamageType daggerDmgType = ReserveDamageType();
@@ -67,6 +68,7 @@ namespace AssassinMod.Survivors.Assassin
                 Log.Info("Little guy :3");
             }
             emoteAPISkeleton = assetBundle.LoadAsset<UnityEngine.GameObject>(assassin_skele);
+            //emoteAPIDecoySkeleton = assetBundle.LoadAsset<UnityEngine.GameObject>(assassin_skele);
 
             CreateEffects();
 
@@ -353,7 +355,7 @@ namespace AssassinMod.Survivors.Assassin
                     FireProjectileInfo info = new FireProjectileInfo()
                     {
                         owner = characterBody.gameObject,
-                        damage = (2.5f * characterBody.damage) * 0.3f,
+                        damage = (AssassinStaticValues.poisonDamageCoef * characterBody.damage) * 0.3f,
                         //damageTypeOverride = (DamageType?)poisonDmgType,
                         force = 0,
                         position = new Vector3(impactPos.x, impactPos.y + 2, impactPos.z),
@@ -365,7 +367,7 @@ namespace AssassinMod.Survivors.Assassin
                     FireProjectileInfo info2 = new FireProjectileInfo()
                     {
                         owner = characterBody.gameObject,
-                        damage = (2.5f * characterBody.damage) * 0.3f,
+                        damage = (AssassinStaticValues.poisonDamageCoef * characterBody.damage) * 0.3f,
                         //damageTypeOverride = (DamageType?)poisonDmgType,
                         force = 0,
                         position = new Vector3(impactPos.x, impactPos.y + 2, impactPos.z),
@@ -377,7 +379,7 @@ namespace AssassinMod.Survivors.Assassin
                     FireProjectileInfo info3 = new FireProjectileInfo()
                     {
                         owner = characterBody.gameObject,
-                        damage = (2.5f * characterBody.damage) * 0.3f,
+                        damage = (AssassinStaticValues.poisonDamageCoef * characterBody.damage) * 0.3f,
                         //damageTypeOverride = (DamageType?)poisonDmgType,
                         force = 0,
                         position = new Vector3(impactPos.x, impactPos.y + 2, impactPos.z),
@@ -444,7 +446,7 @@ namespace AssassinMod.Survivors.Assassin
                     FireProjectileInfo info = new FireProjectileInfo()
                     {
                         owner = characterBody.gameObject,
-                        damage = (2.5f * characterBody.damage) * 0.3f,
+                        damage = (AssassinStaticValues.poisonDamageCoef * characterBody.damage) * 0.3f,
                         //damageTypeOverride = (DamageType?)poisonDmgType,
                         force = 0,
                         position = new Vector3(impactPos.x, impactPos.y + 2, impactPos.z),
@@ -456,7 +458,7 @@ namespace AssassinMod.Survivors.Assassin
                     FireProjectileInfo info2 = new FireProjectileInfo()
                     {
                         owner = characterBody.gameObject,
-                        damage = (2.5f * characterBody.damage) * 0.3f,
+                        damage = (AssassinStaticValues.poisonDamageCoef * characterBody.damage) * 0.3f,
                         //damageTypeOverride = (DamageType?)poisonDmgType,
                         force = 0,
                         position = new Vector3(impactPos.x, impactPos.y + 2, impactPos.z),
@@ -468,7 +470,7 @@ namespace AssassinMod.Survivors.Assassin
                     FireProjectileInfo info3 = new FireProjectileInfo()
                     {
                         owner = characterBody.gameObject,
-                        damage = (2.5f * characterBody.damage) * 0.3f,
+                        damage = (AssassinStaticValues.poisonDamageCoef * characterBody.damage) * 0.3f,
                         //damageTypeOverride = (DamageType?)poisonDmgType,
                         force = 0,
                         position = new Vector3(impactPos.x, impactPos.y + 2, impactPos.z),
@@ -582,7 +584,7 @@ namespace AssassinMod.Survivors.Assassin
                     FireProjectileInfo info = new FireProjectileInfo()
                     {
                         owner = characterBody.gameObject,
-                        damage = 2.5f * characterBody.damage,
+                        damage = AssassinStaticValues.poisonDamageCoef * characterBody.damage,
                         force = 0,
                         position = new Vector3(impactPos.x, impactPos.y, impactPos.z),
                         rotation = Quaternion.Euler(0, 0, 0),

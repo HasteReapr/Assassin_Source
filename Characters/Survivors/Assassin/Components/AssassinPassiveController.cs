@@ -25,7 +25,6 @@ namespace AssassinMod.Survivors.Assassin.Components
             {
                 if (skill._skillFamily != skillLoc.primary && skill._skillFamily != skillLoc.secondary && skill._skillFamily != skillLoc.special && skill._skillFamily != skillLoc.utility)
                 {
-                    Log.Message("Found the passiveskill.");
                     passiveSkillSlot = skill;
                     break;
                 }

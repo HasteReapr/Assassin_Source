@@ -49,6 +49,17 @@ namespace AssassinMod.Survivors.Assassin
             Language.Add(prefix + "EXPLOSIVEDECOY_NAME", "Assassin Decoy");
             #endregion
 
+            #region Keywords
+            string WarcryAdd = "\n<style=cIsUtility>While under the influence of War Cry, </style>";
+            LanguageAPI.Add("KEYWORD_DAGGER_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw 4 daggers.");
+            LanguageAPI.Add("KEYWORD_GHOSTLY_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + $"minimum damage is increased to <style=cIsDamage>{100 * cutterDamageCoef * 0.5f}%</style>.");
+            LanguageAPI.Add("KEYWORD_POISON_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw a clustered potion with weaker children.");
+            LanguageAPI.Add("KEYWORD_VENOM_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw 2 potions in a loose fan");
+            LanguageAPI.Add("KEYWORD_TELEPORT_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw the teleport potion faster, and explode in a poisonous cloud upon teleporting.");
+            LanguageAPI.Add("KEYWORD_ROLL_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "rolling applies the warbanner effect.");
+            LanguageAPI.Add("KEYWORD_DECOY_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw poisons in your wake.");
+            #endregion
+
             #region Skins
             Language.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
             Language.Add(prefix + "MASTERY_SKIN_NAME", "Exalted");
@@ -57,7 +68,7 @@ namespace AssassinMod.Survivors.Assassin
 
             #region Passive
             LanguageAPI.Add(prefix + "PASSIVE_NAME", "Mad God's Rage");
-            LanguageAPI.Add(prefix + "PASSIVE_NAME", "Getting hit below <style=cIsHealth>60% maximum health</style> will increase your attack speed and damage by <style=cIsDamage>7.5% per stack</style>, for <style=cIsUtility>3 seconds.</style>");
+            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Getting hit below <style=cIsHealth>60% maximum health</style> will increase your attack speed and damage by <style=cIsDamage>7.5% per stack</style>, for <style=cIsUtility>3 seconds.</style>");
             
             LanguageAPI.Add(prefix + "ALT_PASSIVE_NAME", "Toxic Terror");
             LanguageAPI.Add(prefix + "ALT_PASSIVE_DESCRIPTION", $"Getting hit throws a poison to the direction of damage, dealing <style=cIsDamage>{100 * poisonDamageCoef}% damage</style> plus an additional <style=cIsDamage>{100 * poisonDOTDamageCoef}% damage over time</style>.");
@@ -73,7 +84,7 @@ namespace AssassinMod.Survivors.Assassin
             
             #region AltPrimary
             LanguageAPI.Add(prefix + "PRIMARY_CUTTER_NAME", "Ghostly Dagger");
-            LanguageAPI.Add(prefix + "PRIMARY_CUTTER_DESCRIPTION", Tokens.agilePrefix + $"Throw 1 dagger for <style=cIsDamage>{100 * cutterDamageCoef * 0.2f} to {100 * cutterDamageCoef * 1.75f}% damage</style>.");
+            LanguageAPI.Add(prefix + "PRIMARY_CUTTER_DESCRIPTION", Tokens.agilePrefix + $"Throw 1 dagger for <style=cIsDamage>{100 * cutterDamageCoef * 0.2f}% to {100 * cutterDamageCoef * (2.75/cutterDamageCoef)}% damage</style>.");
             #endregion
 
             #region Secondary
@@ -98,7 +109,7 @@ namespace AssassinMod.Survivors.Assassin
             LanguageAPI.Add(prefix + "UTILITY_ROLL_DESCRIPTION", "Roll forward, becoming invisible and gaining a small movespeed boost.");
             
             LanguageAPI.Add(prefix + "UTILITY_DECOY_NAME", "Decoy Prism");
-            LanguageAPI.Add(prefix + "UTILITY_DECOY_DESCRIPTION", "Dash forward, leaving a decoy at your old position.");
+            LanguageAPI.Add(prefix + "UTILITY_DECOY_DESCRIPTION", "Dash forward, leaving an exploding decoy at your old position.");
             #endregion
 
             #region Special

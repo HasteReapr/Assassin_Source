@@ -52,7 +52,7 @@ namespace AssassinMod.Survivors.Assassin
             healthRegen = 1.5f,
             armor = 0f,
             moveSpeed = 9f,
-            damage = 15f,
+            damage = 12.5f,
             attackSpeed = 1,
 
             jumpCount = 1,
@@ -223,7 +223,7 @@ namespace AssassinMod.Survivors.Assassin
                 skillNameToken = ASSASSIN_PREFIX + "ALT_PASSIVE_NAME",
                 skillDescriptionToken = ASSASSIN_PREFIX + "ALT_PASSIVE_DESCRIPTION",
                 keywordTokens = new string[] { "KEYWORD_AGILE" },
-                skillIcon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("texPoisonPassiveIcon"),
             });
             AssassinStaticValues.poisonPassiveDef = poisonPassiveDef;
 
@@ -241,7 +241,7 @@ namespace AssassinMod.Survivors.Assassin
                 skillNameToken = ASSASSIN_PREFIX + "ALT1_PASSIVE_NAME",
                 skillDescriptionToken = ASSASSIN_PREFIX + "ALT1_PASSIVE_DESCRIPTION",
                 keywordTokens = new string[] { "KEYWORD_AGILE" },
-                skillIcon = assetBundle.LoadAsset<Sprite>("texPassiveIcon"),
+                skillIcon = assetBundle.LoadAsset<Sprite>("texDecoyPassiveIcon"),
             });
             AssassinStaticValues.decoyPassiveDef = decoyPassiveDef;
             Skills.AddSkillsToFamily(passiveGenericSkill.skillFamily, decoyPassiveDef);
@@ -267,6 +267,7 @@ namespace AssassinMod.Survivors.Assassin
 
             daggerSkillDef.keywordTokens = new string[]
             {
+                "KEYWORD_AGILE",
                 "KEYWORD_DAGGER_WC"
             };
 
@@ -277,15 +278,16 @@ namespace AssassinMod.Survivors.Assassin
                     "AssassinDaggerThrow",
                     ASSASSIN_PREFIX + "PRIMARY_CUTTER_NAME",
                     ASSASSIN_PREFIX + "PRIMARY_CUTTER_DESCRIPTION",
-                    assetBundle.LoadAsset<Sprite>("texPrimaryIcon"),
+                    assetBundle.LoadAsset<Sprite>("texGhostlyPrimaryIcon"),
                     new EntityStates.SerializableEntityStateType(typeof(ThrowCutter)),
                     "Weapon",
                     true
                 ));
 
-            daggerSkillDef.keywordTokens = new string[]
+            cutterSkillDef.keywordTokens = new string[]
             {
-                "KEYWORD_DAGGER_WC"
+                "KEYWORD_AGILE",
+                "KEYWORD_GHOSTLY_WC"
             };
 
             Skills.AddPrimarySkills(bodyPrefab, cutterSkillDef);
@@ -318,7 +320,7 @@ namespace AssassinMod.Survivors.Assassin
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1,
-                keywordTokens = new string[] { "KEYWORD_AGILE" }
+                keywordTokens = new string[] { "KEYWORD_AGILE", "KEYWORD_POISON_WC" }
             });
 
             Skills.AddSecondarySkills(bodyPrefab, poisonSkillDef);
@@ -375,15 +377,8 @@ namespace AssassinMod.Survivors.Assassin
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1,
-                keywordTokens = new string[] { "KEYWORD_AGILE" }
+                keywordTokens = new string[] { "KEYWORD_AGILE", "KEYWORD_VENOM_WC" }
             });
-
-            //Modules.Skills.AddSecondarySkills(bodyPrefab, venomSkillDef);
-
-            venomSkillDef.keywordTokens = new string[]
-            {
-                "KEYWORD_VENOM_WC"
-            };
 
             Skills.AddSecondarySkills(bodyPrefab, venomSkillDef);
 
@@ -447,6 +442,7 @@ namespace AssassinMod.Survivors.Assassin
 
             pearlSkillDef.keywordTokens = new string[]
             {
+                "KEYWORD_AGILE",
                 "KEYWORD_TELEPORT_WC"
             };
 
@@ -476,13 +472,14 @@ namespace AssassinMod.Survivors.Assassin
                 stockToConsume = 1
             });
 
-            UnlockableDef rollUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
+            /*UnlockableDef rollUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
             rollUnlock.cachedName = "Skills.Assassin.Roll";
             rollUnlock.nameToken = "ACHIEVEMENT_ASSASSINROLLUNLOCK_NAME";
             rollUnlock.achievementIcon = rollSkillDef.icon;
-            Modules.ContentPacks.unlockableDefs.Add(rollUnlock);
+            Modules.ContentPacks.unlockableDefs.Add(rollUnlock);*/
             rollSkillDef.keywordTokens = new string[]
             {
+                "KEYWORD_AGILE",
                 "KEYWORD_ROLL_WC"
             };
 
@@ -493,11 +490,11 @@ namespace AssassinMod.Survivors.Assassin
                skillName = ASSASSIN_PREFIX + "UTILITY_DECOY_NAME",
                skillNameToken = ASSASSIN_PREFIX + "UTILITY_DECOY_NAME",
                skillDescriptionToken = ASSASSIN_PREFIX + "UTILITY_DECOY_DESCRIPTION",
-               skillIcon = assetBundle.LoadAsset<Sprite>("texAltUtilityIcon"),
+               skillIcon = assetBundle.LoadAsset<Sprite>("texDecoyUtilityIcon"),
                activationState = new EntityStates.SerializableEntityStateType(typeof(ThrowDecoy)),
                activationStateMachineName = "Body",
                baseMaxStock = 1,
-               baseRechargeInterval = 15f,
+               baseRechargeInterval = 8f,
                beginSkillCooldownOnSkillEnd = false,
                canceledFromSprinting = false,
                forceSprintDuringState = false,
@@ -512,9 +509,10 @@ namespace AssassinMod.Survivors.Assassin
                stockToConsume = 1
            });
 
-           rollSkillDef.keywordTokens = new string[]
+           decoySkillDef.keywordTokens = new string[]
            {
-               "KEYWORD_ROLL_WC"
+               "KEYWORD_AGILE",
+               "KEYWORD_DECOY_WC"
            };
 
            Skills.AddUtilitySkills(bodyPrefab, decoySkillDef);
@@ -545,7 +543,8 @@ namespace AssassinMod.Survivors.Assassin
                 cancelSprintingOnActivation = false,
                 rechargeStock = 1,
                 requiredStock = 1,
-                stockToConsume = 1
+                stockToConsume = 1,
+                keywordTokens = new string[] { "KEYWORD_AGILE" }
             });
 
             Skills.AddSpecialSkills(bodyPrefab, warCrySkillDef);
@@ -571,14 +570,15 @@ namespace AssassinMod.Survivors.Assassin
                 cancelSprintingOnActivation = false,
                 rechargeStock = 1,
                 requiredStock = 1,
-                stockToConsume = 1
+                stockToConsume = 1,
+                keywordTokens = new string[] { "KEYWORD_AGILE" }
             });
 
-            UnlockableDef backstabUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
+            /*UnlockableDef backstabUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
             backstabUnlock.cachedName = "Skills.Assassin.BackStab";
             backstabUnlock.nameToken = "ACHIEVEMENT_ASSASSINBACKSTABUNLOCK_NAME";
             backstabUnlock.achievementIcon = backstabSkillDef.icon;
-            ContentPacks.unlockableDefs.Add(backstabUnlock);
+            ContentPacks.unlockableDefs.Add(backstabUnlock);*/
             Skills.AddSpecialSkills(bodyPrefab, backstabSkillDef);
         }
         #endregion skills

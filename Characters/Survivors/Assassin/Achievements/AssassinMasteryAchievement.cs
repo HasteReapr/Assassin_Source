@@ -8,6 +8,7 @@ namespace AssassinMod.Survivors.Assassin.Achievements
     public class AssassinMasteryAchievement : BaseMasteryAchievement
     {
         public const string identifier = AssassinPlr.ASSASSIN_PREFIX + "masteryAchievement";
+        public const string description = AssassinPlr.ASSASSIN_PREFIX + "As Assassin, beat the game or obliterate on Monsoon or higher.";
         public const string unlockableIdentifier = AssassinPlr.ASSASSIN_PREFIX + "masteryUnlockable";
 
         public override string RequiredCharacterBody => AssassinPlr.instance.bodyName;

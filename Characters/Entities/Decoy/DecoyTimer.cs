@@ -27,15 +27,17 @@ namespace AssassinMod.Characters.Entities.Decoy
             var owner = characterBody?.master?.GetComponent<AIOwnership>()?.ownerMaster?.GetBody();
             if (owner)
             {
+                // This is for setting the skin of the decoy to whatever skin the player has.
                 var skinc = owner.modelLocator.modelTransform.GetComponent<ModelSkinController>();
                 skinc.skins[skinc.currentSkinIndex].Apply(modelLocator.modelTransform.gameObject);
-                //Chat.AddMessage($"Setting decoy skin \nOwner {owner}\nSkinc {skinc}");
             }
 
-            PlayEmote();
+            //This was to play a random emote whenever the decoy spawned, however this is apparently fucking impossible to do
+            //if(AssassinPlugin.emoteAPILoaded)
+            //    PlayEmote();
         }
 
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        /*[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void PlayEmote()
         {
             // Play a random emote
@@ -44,8 +46,9 @@ namespace AssassinMod.Characters.Entities.Decoy
             {
                 rand = UnityEngine.Random.Range(0, allClipNames.Count);
             }
-            EmotesAPI.CustomEmotesAPI.PlayAnimation(allClipNames[rand], modelLocator.modelTransform.GetComponent<BoneMapper>());
-        }
+
+            EmotesAPI.CustomEmotesAPI.PlayAnimation(allClipNames[rand], gameObject.GetComponentInParent<BoneMapper>());
+        }*/
 
         public override void OnExit()
         {

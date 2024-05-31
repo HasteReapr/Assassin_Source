@@ -61,10 +61,13 @@ namespace AssassinMod.Characters.Survivors.Assassin.SkillStates.AlternateSkills
             Ray aimRay = GetAimRay();
             if (isAuthority)
             {
+                float lowVal = base.HasBuff(AssassinBuffs.assassinDrugsBuff) ? 0.5f : 0.2f;
+
+                float highVal = 2.75f / damageCoef;
                 FireProjectileInfo info = new FireProjectileInfo()
                 {
                     owner = gameObject,
-                    damage = (damageCoef * characterBody.damage) * Random.Range(0.2f, 1.75f),
+                    damage = (damageCoef * characterBody.damage) * Random.Range(lowVal, highVal),
                     force = 0,
                     position = aimRay.origin,
                     crit = characterBody.RollCrit(),

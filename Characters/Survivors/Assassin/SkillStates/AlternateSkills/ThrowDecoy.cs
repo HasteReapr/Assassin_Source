@@ -9,6 +9,7 @@ using UnityEngine.Networking;
 using AssassinMod.Survivors.Assassin;
 using AssassinMod.Characters.Entities.Decoy;
 using R2API.Networking.Interfaces;
+using RoR2.Projectile;
 
 namespace AssassinMod.Characters.Survivors.Assassin.SkillStates.AlternateSkills
 {
@@ -92,6 +93,27 @@ namespace AssassinMod.Characters.Survivors.Assassin.SkillStates.AlternateSkills
             }
             previousPosition = base.transform.position;
 
+            if (base.HasBuff(AssassinBuffs.assassinDrugsBuff))
+            {
+                if(fixedAge % 0.05f == 0)
+                {
+                    FireProjectileInfo poison = new FireProjectileInfo()
+                    {
+                        owner = characterBody.gameObject,
+                        damage = (AssassinStaticValues.poisonDamageCoef * characterBody.damage) * 0.3f,
+                        //damageTypeOverride = (DamageType?)poisonDmgType,
+                        force = 0,
+                        position = GetComponent<Rigidbody>().position,
+                        rotation = Quaternion.Euler(0, 0, 0),
+                        projectilePrefab = AssassinAssets.poison,
+                        speedOverride = 16,
+                        //damageTypeOverride = characterBody.HasBuff(Modules.Buffs.assassinDrugsBuff) ? (DamageType?)Modules.Projectiles.poisonDmgType : (DamageType?)Modules.Projectiles.poisonDmgType,
+                    };
+
+                    ProjectileManager.instance.FireProjectile(poison);
+                }
+            }
+
             if (base.isAuthority && base.fixedAge >= Roll.duration)
             {
                 outer.SetNextStateToMain();
@@ -104,12 +126,6 @@ namespace AssassinMod.Characters.Survivors.Assassin.SkillStates.AlternateSkills
             if (base.cameraTargetParams) base.cameraTargetParams.fovOverride = -1f;
             base.OnExit();
             animator.SetBool("inCombat", false);
-
-            if (NetworkServer.active)
-            {
-                if (characterBody.HasBuff(AssassinBuffs.assassinDrugsBuff))
-                    characterBody.AddTimedBuff(RoR2Content.Buffs.Warbanner, 3);
-            }
 
             base.characterMotor.disableAirControlUntilCollision = false;
         }

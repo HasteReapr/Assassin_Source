@@ -9,6 +9,7 @@ using EntityStates;
 using AssassinMod.Survivors.Assassin;
 using RoR2.Skills;
 using AssassinMod.Characters.Entities.Decoy;
+using System.Runtime.CompilerServices;
 
 namespace AssassinMod.Characters.Entities.Decoy
 {
@@ -16,7 +17,7 @@ namespace AssassinMod.Characters.Entities.Decoy
     public class AssassinDecoy : DecoyBase<AssassinDecoy>
     {
         public override string PathToClone => "RoR2/Junk/Bandit/BanditBody.prefab";
-        public override string CloneName => "Explosive Decoy";
+        public override string CloneName => "ExplosiveDecoy";
         public override string PathToCloneMaster => "RoR2/Base/Beetle/BeetleMaster.prefab";
         public CharacterBody body;
         public CharacterMaster master;
@@ -102,7 +103,18 @@ namespace AssassinMod.Characters.Entities.Decoy
         {
             base.PostCreation();
             RegisterEnemy(prefab, prefabMaster, null, DirectorAPI.MonsterCategory.BasicMonsters, false);
+
+            //if (AssassinPlugin.emoteAPILoaded)
+            //    EmoteAPIComp();
         }
+
+        /*[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private void EmoteAPIComp()
+        {
+            GameObject skele = AssassinAssets.emoteAPIDecoySkeleton;
+            EmotesAPI.CustomEmotesAPI.ImportArmature(prefab, skele, jank: true);
+            skele.GetComponentInChildren<BoneMapper>().scale = 1f;
+        }*/
 
         public override void AddDirectorCard()
         {
