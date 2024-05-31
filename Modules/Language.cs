@@ -8,9 +8,9 @@ namespace AssassinMod.Modules {
     {
         public static string TokensOutput = "";
 
-        public static bool usingLanguageFolder = false;
+        public static bool usingLanguageFolder = true;
 
-        public static bool printingEnabled = false;
+        public static bool printingEnabled = true;
 
         public static void Init() {
             if (usingLanguageFolder) {

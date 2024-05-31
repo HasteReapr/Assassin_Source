@@ -14,7 +14,7 @@ namespace AssassinMod.Survivors.Assassin
 
             ////uncomment this to spit out a lanuage file with all the above tokens that people can translate
             ////make sure you set Language.usingLanguageFolder and printingEnabled to true
-            //Language.PrintOutput("Henry.txt");
+            Language.PrintOutput("Assassin.txt");
             ////refer to guide on how to build and distribute your mod with the proper folders
         }
 
@@ -51,13 +51,13 @@ namespace AssassinMod.Survivors.Assassin
 
             #region Keywords
             string WarcryAdd = "\n<style=cIsUtility>While under the influence of War Cry, </style>";
-            LanguageAPI.Add("KEYWORD_DAGGER_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw 4 daggers.");
-            LanguageAPI.Add("KEYWORD_GHOSTLY_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + $"minimum damage is increased to <style=cIsDamage>{100 * cutterDamageCoef * 0.5f}%</style>.");
-            LanguageAPI.Add("KEYWORD_POISON_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw a clustered potion with weaker children.");
-            LanguageAPI.Add("KEYWORD_VENOM_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw 2 potions in a loose fan");
-            LanguageAPI.Add("KEYWORD_TELEPORT_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw the teleport potion faster, and explode in a poisonous cloud upon teleporting.");
-            LanguageAPI.Add("KEYWORD_ROLL_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "rolling applies the warbanner effect.");
-            LanguageAPI.Add("KEYWORD_DECOY_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw poisons in your wake.");
+            Language.Add(prefix + "KEYWORD_DAGGER_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw 4 daggers.");
+            Language.Add(prefix + "KEYWORD_GHOSTLY_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + $"minimum damage is increased to <style=cIsDamage>{100 * cutterDamageCoef * 0.5f}%</style>.");
+            Language.Add(prefix + "KEYWORD_POISON_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw a clustered potion with weaker children.");
+            Language.Add(prefix + "KEYWORD_VENOM_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw 2 potions in a loose fan");
+            Language.Add(prefix + "KEYWORD_TELEPORT_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw the teleport potion faster, and explode in a poisonous cloud upon teleporting.");
+            Language.Add(prefix + "KEYWORD_ROLL_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "rolling applies the warbanner effect.");
+            Language.Add(prefix + "KEYWORD_DECOY_WC", "<style=cKeywordName>Inspired</style>" + WarcryAdd + "throw poisons in your wake.");
             #endregion
 
             #region Skins
@@ -67,59 +67,59 @@ namespace AssassinMod.Survivors.Assassin
             #endregion
 
             #region Passive
-            LanguageAPI.Add(prefix + "PASSIVE_NAME", "Mad God's Rage");
-            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Getting hit below <style=cIsHealth>60% maximum health</style> will increase your attack speed and damage by <style=cIsDamage>7.5% per stack</style>, for <style=cIsUtility>3 seconds.</style>");
+            Language.Add(prefix + "PASSIVE_NAME", "Mad God's Rage");
+            Language.Add(prefix + "PASSIVE_DESCRIPTION", "Getting hit below <style=cIsHealth>60% maximum health</style> will increase your attack speed and damage by <style=cIsDamage>7.5% per stack</style>, for <style=cIsUtility>3 seconds.</style>");
             
-            LanguageAPI.Add(prefix + "ALT_PASSIVE_NAME", "Toxic Terror");
-            LanguageAPI.Add(prefix + "ALT_PASSIVE_DESCRIPTION", $"Getting hit throws a poison to the direction of damage, dealing <style=cIsDamage>{100 * poisonDamageCoef}% damage</style> plus an additional <style=cIsDamage>{100 * poisonDOTDamageCoef}% damage over time</style>.");
+            Language.Add(prefix + "ALT_PASSIVE_NAME", "Toxic Terror");
+            Language.Add(prefix + "ALT_PASSIVE_DESCRIPTION", $"Getting hit throws a poison to the direction of damage, dealing <style=cIsDamage>{100 * poisonDamageCoef}% damage</style> plus an additional <style=cIsDamage>{100 * poisonDOTDamageCoef}% damage over time</style>.");
             
-            LanguageAPI.Add(prefix + "ALT1_PASSIVE_NAME", "Trickster's Ruse");
-            LanguageAPI.Add(prefix + "ALT1_PASSIVE_DESCRIPTION", $"Getting hit has a <style=cIsUtility>5%</style> chance to spawn a decoy that lives for 5 seconds, and explodes dealing <style=cIsDamage>{100 * decoyExplodeDamageCoef}% damage</style>.");
+            Language.Add(prefix + "ALT1_PASSIVE_NAME", "Trickster's Ruse");
+            Language.Add(prefix + "ALT1_PASSIVE_DESCRIPTION", $"Getting hit has a <style=cIsUtility>5%</style> chance to spawn a decoy that lives for 5 seconds, and explodes dealing <style=cIsDamage>{100 * decoyExplodeDamageCoef}% damage</style>.");
             #endregion
 
             #region Primary
-            LanguageAPI.Add(prefix + "PRIMARY_DAGGER_NAME", "Dagger");
-            LanguageAPI.Add(prefix + "PRIMARY_DAGGER_DESCRIPTION", Tokens.agilePrefix + $"Throw 2 daggers for <style=cIsDamage>{100 * daggerDamageCoef}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_DAGGER_NAME", "Dagger");
+            Language.Add(prefix + "PRIMARY_DAGGER_DESCRIPTION", Tokens.agilePrefix + $"Throw 2 daggers for <style=cIsDamage>{100 * daggerDamageCoef}% damage</style>.");
             #endregion
             
             #region AltPrimary
-            LanguageAPI.Add(prefix + "PRIMARY_CUTTER_NAME", "Ghostly Dagger");
-            LanguageAPI.Add(prefix + "PRIMARY_CUTTER_DESCRIPTION", Tokens.agilePrefix + $"Throw 1 dagger for <style=cIsDamage>{100 * cutterDamageCoef * 0.2f}% to {100 * cutterDamageCoef * (2f/cutterDamageCoef)}% damage</style>.");
+            Language.Add(prefix + "PRIMARY_CUTTER_NAME", "Ghostly Dagger");
+            Language.Add(prefix + "PRIMARY_CUTTER_DESCRIPTION", Tokens.agilePrefix + $"Throw 1 dagger for <style=cIsDamage>{100 * cutterDamageCoef * 0.2f}% to {100 * cutterDamageCoef * (2f/cutterDamageCoef)}% damage</style>.");
             #endregion
 
             #region Secondary
-            LanguageAPI.Add(prefix + "SECONDARY_POISON_NAME", "Poison");
-            LanguageAPI.Add(prefix + "SECONDARY_POISON_DESCRIPTION", Tokens.agilePrefix + $"Throw a poisonous potion for <style=cIsDamage>{100 * poisonDamageCoef}% damage</style> plus an additional <style=cIsDamage>{100 * poisonDOTDamageCoef}% damage over time.</style>");
-            LanguageAPI.Add(prefix + "SECONDARY_POISON_DESCRIPTION_SCEPTER", Tokens.agilePrefix + $"Throw a clustered poisonous potion for <style=cIsDamage>{100 * poisonDamageCoef}% damage</style> plus an additional <style=cIsDamage>{100 * poisonDOTDamageCoef}% damage over time, each.</style> \n\n<style=cKeywordName>While under the influence of War Cry, throw a recursively clustered potion, with weaker children.</style>");
+            Language.Add(prefix + "SECONDARY_POISON_NAME", "Poison");
+            Language.Add(prefix + "SECONDARY_POISON_DESCRIPTION", Tokens.agilePrefix + $"Throw a poisonous potion for <style=cIsDamage>{100 * poisonDamageCoef}% damage</style> plus an additional <style=cIsDamage>{100 * poisonDOTDamageCoef}% damage over time.</style>");
+            Language.Add(prefix + "SECONDARY_POISON_DESCRIPTION_SCEPTER", Tokens.agilePrefix + $"Throw a clustered poisonous potion for <style=cIsDamage>{100 * poisonDamageCoef}% damage</style> plus an additional <style=cIsDamage>{100 * poisonDOTDamageCoef}% damage over time, each.</style> \n\n<style=cKeywordName>While under the influence of War Cry, throw a recursively clustered potion, with weaker children.</style>");
             #endregion
 
             #region AltSecondary
-            LanguageAPI.Add(prefix + "SECONDARY_POISON_NAME_ALT", "Virulent Venom");
-            LanguageAPI.Add(prefix + "SECONDARY_POISON_DESCRIPTION_ALT", Tokens.agilePrefix + $"Throw a lingering potion for <style=cIsDamage>{100 * venomDamageCoef}% damage.</style> <style=cIsUtility>Toxins linger for 5 seconds.</style> <style=cDeath>Does not inflict poison.</style>");
-            LanguageAPI.Add(prefix + "SCEPTER_SECONDARY_POISON_DESCRIPTION_ALT", Tokens.agilePrefix + $"Throw 2 lingering potions in a loose fan for <style=cIsDamage>{100 * venomDamageCoef}% damage.</style> <style=cIsUtility>Toxins linger for 5 seconds.</style> <style=cDeath>Does not inflict poison.</style>");
+            Language.Add(prefix + "SECONDARY_POISON_NAME_ALT", "Virulent Venom");
+            Language.Add(prefix + "SECONDARY_POISON_DESCRIPTION_ALT", Tokens.agilePrefix + $"Throw a lingering potion for <style=cIsDamage>{100 * venomDamageCoef}% damage.</style> <style=cIsUtility>Toxins linger for 5 seconds.</style> <style=cDeath>Does not inflict poison.</style>");
+            Language.Add(prefix + "SCEPTER_SECONDARY_POISON_DESCRIPTION_ALT", Tokens.agilePrefix + $"Throw 2 lingering potions in a loose fan for <style=cIsDamage>{100 * venomDamageCoef}% damage.</style> <style=cIsUtility>Toxins linger for 5 seconds.</style> <style=cDeath>Does not inflict poison.</style>");
             #endregion
 
             #region Utility
-            LanguageAPI.Add(prefix + "UTILITY_CLOAK_NAME", "Teleport");
-            LanguageAPI.Add(prefix + "UTILITY_CLOAK_DESCRIPTION", "Throw a potion towards your cursor <style=cIsUtility>teleporting you to where it lands,</style> then throw a potion onto the ground, <style=cIsUtility>exploding into a cloud of smoke, gaining the Cloak Speed buff.</style>");
+            Language.Add(prefix + "UTILITY_CLOAK_NAME", "Teleport");
+            Language.Add(prefix + "UTILITY_CLOAK_DESCRIPTION", "Throw a potion towards your cursor <style=cIsUtility>teleporting you to where it lands,</style> then throw a potion onto the ground, <style=cIsUtility>exploding into a cloud of smoke, gaining the Cloak Speed buff.</style>");
             #endregion
 
             #region AltUtility
-            LanguageAPI.Add(prefix + "UTILITY_ROLL_NAME", "Cloaking Roll");
-            LanguageAPI.Add(prefix + "UTILITY_ROLL_DESCRIPTION", "Roll forward, becoming invisible and gaining a small movespeed boost.");
+            Language.Add(prefix + "UTILITY_ROLL_NAME", "Cloaking Roll");
+            Language.Add(prefix + "UTILITY_ROLL_DESCRIPTION", "Roll forward, becoming invisible and gaining a small movespeed boost.");
             
-            LanguageAPI.Add(prefix + "UTILITY_DECOY_NAME", "Decoy Prism");
-            LanguageAPI.Add(prefix + "UTILITY_DECOY_DESCRIPTION", "Dash forward, leaving an exploding decoy at your old position.");
+            Language.Add(prefix + "UTILITY_DECOY_NAME", "Decoy Prism");
+            Language.Add(prefix + "UTILITY_DECOY_DESCRIPTION", "Dash forward, leaving an exploding decoy at your old position.");
             #endregion
 
             #region Special
-            LanguageAPI.Add(prefix + "SPECIAL_POISON_SPAM_NAME", "War Cry");
-            LanguageAPI.Add(prefix + "SPECIAL_POISON_SPAM_DESCRIPTION", $"<style=cIsUtility>Buff yourself, and all of your abilities for 5 seconds.</style>");// <style=cIsUtility>Throw 3 knives, a recursive poison, and more potent smoke bomb</style> during the duration.");
+            Language.Add(prefix + "SPECIAL_POISON_SPAM_NAME", "War Cry");
+            Language.Add(prefix + "SPECIAL_POISON_SPAM_DESCRIPTION", $"<style=cIsUtility>Buff yourself, and all of your abilities for 5 seconds.</style>");// <style=cIsUtility>Throw 3 knives, a recursive poison, and more potent smoke bomb</style> during the duration.");
             #endregion
 
             #region AltSpecial
-            LanguageAPI.Add(prefix + "SPECIAL_BACKSTAB_NAME", "Spinal Tap");
-            LanguageAPI.Add(prefix + "SPECIAL_BACKSTAB_DESCRIPTION", $"Stab your enemies for <style=cIsDamage>{100 * backstabDamageCoef}% damage. </style><style=cIsUtility>When stabbing a lesser enemy from behind,</style> <style=cIsHealth>instantly kill your target.</style> On stabbing a boss from behind, have a <style=cIsUtility>{AssassinConfig.BackstabChance.Value}%</style> to <style=cIsHealth>instantly kill your target.</style> If this fails, deal <style=cIsDamage>20% of the targets health.</style>");// <style=cIsUtility>Throw 3 knives, a recursive poison, and more potent smoke bomb</style> during the duration.");
+            Language.Add(prefix + "SPECIAL_BACKSTAB_NAME", "Spinal Tap");
+            Language.Add(prefix + "SPECIAL_BACKSTAB_DESCRIPTION", $"Stab your enemies for <style=cIsDamage>{100 * backstabDamageCoef}% damage. </style><style=cIsUtility>When stabbing a lesser enemy from behind,</style> <style=cIsHealth>instantly kill your target.</style> On stabbing a boss from behind, have a <style=cIsUtility>{AssassinConfig.BackstabChance.Value}%</style> to <style=cIsHealth>instantly kill your target.</style> If this fails, deal <style=cIsDamage>20% of the targets health.</style>");// <style=cIsUtility>Throw 3 knives, a recursive poison, and more potent smoke bomb</style> during the duration.");
             #endregion
 
             #region Achievements

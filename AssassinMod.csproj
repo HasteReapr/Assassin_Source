@@ -51,7 +51,8 @@
 	  <Reference Include="AncientScepter">
 	    <HintPath>..\..\..\Documents\Assassin ROR2 Setup\HenryTutorial-master\libs\AncientScepter.dll</HintPath>
 	  </Reference>
-	  <Reference Include="CustomEmotesAPI">
+	  <Reference Include="Custom
+				 sAPI">
 	    <HintPath>..\..\..\Documents\Assassin ROR2 Setup\HenryTutorial-master\libs\CustomEmotesAPI.dll</HintPath>
 	  </Reference>
 	  <Reference Include="R2API.Core">

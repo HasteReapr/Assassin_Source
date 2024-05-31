@@ -34,7 +34,7 @@ namespace AssassinMod
     {
         public const string MODUID = "com.HasteReapr.AssassinMod";
         public const string MODNAME = "AssassinMod";
-        public const string MODVERSION = "2.0.0";
+        public const string MODVERSION = "2.0.5";
 
         public const string DEVELOPER_PREFIX = "HASTEREAPR";
 
@@ -60,8 +60,10 @@ namespace AssassinMod
             Hook();
 
             // Adds compatability for Emote API (Badass Emotes)
-            if(emoteAPILoaded)
+            if (emoteAPILoaded)
+            {
                 EmoteAPICompat();
+            }
 
             Logger.LogMessage("Emote API Loaded : " + emoteAPILoaded);
 
@@ -77,7 +79,10 @@ namespace AssassinMod
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.CharacterBody.OnTakeDamageServer += CharacterBody_OnTakeDamageServer;
             On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
-            EmotesAPI.CustomEmotesAPI.animChanged += CustomEmotesAPI_animChanged;
+            if (emoteAPILoaded)
+            {
+                EmotesAPI.CustomEmotesAPI.animChanged += CustomEmotesAPI_animChanged;
+            }
         }
 
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
