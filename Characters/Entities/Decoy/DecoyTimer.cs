@@ -7,7 +7,7 @@ using UnityEngine;
 using RoR2.CharacterAI;
 using UnityEngine.Networking;
 using System.Collections.Generic;
-using static EmotesAPI.CustomEmotesAPI;
+//using static EmotesAPI.CustomEmotesAPI;
 using System.Runtime.CompilerServices;
 using AssassinMod.Survivors.Assassin;
 

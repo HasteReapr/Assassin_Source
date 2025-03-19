@@ -45,7 +45,7 @@ namespace AssassinMod.Survivors.Assassin
             bodyColor = new Color(0.25882352941176470588235294117647f, 0.25882352941176470588235294117647f, 0.42352941176470588235294117647059f), //(66, 66, 108)
             sortPosition = 100,
 
-            crosshair = Assets.LoadCrosshair("Standard"),
+            crosshair = AsnAssets.LoadCrosshair("Standard"),
             podPrefab = LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = 125f,
@@ -268,7 +268,7 @@ namespace AssassinMod.Survivors.Assassin
             daggerSkillDef.keywordTokens = new string[]
             {
                 "KEYWORD_AGILE",
-                "KEYWORD_DAGGER_WC"
+                ASSASSIN_PREFIX + "KEYWORD_DAGGER_WC"
             };
 
             Skills.AddPrimarySkills(bodyPrefab, daggerSkillDef);
@@ -287,7 +287,7 @@ namespace AssassinMod.Survivors.Assassin
             cutterSkillDef.keywordTokens = new string[]
             {
                 "KEYWORD_AGILE",
-                "KEYWORD_GHOSTLY_WC"
+                ASSASSIN_PREFIX + "KEYWORD_GHOSTLY_WC"
             };
 
             Skills.AddPrimarySkills(bodyPrefab, cutterSkillDef);
@@ -320,7 +320,7 @@ namespace AssassinMod.Survivors.Assassin
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1,
-                keywordTokens = new string[] { "KEYWORD_AGILE", "KEYWORD_POISON_WC" }
+                keywordTokens = new string[] { "KEYWORD_AGILE", ASSASSIN_PREFIX + "KEYWORD_POISON_WC" }
             });
 
             Skills.AddSecondarySkills(bodyPrefab, poisonSkillDef);
@@ -377,7 +377,7 @@ namespace AssassinMod.Survivors.Assassin
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1,
-                keywordTokens = new string[] { "KEYWORD_AGILE", "KEYWORD_VENOM_WC" }
+                keywordTokens = new string[] { "KEYWORD_AGILE", ASSASSIN_PREFIX + "KEYWORD_VENOM_WC" }
             });
 
             Skills.AddSecondarySkills(bodyPrefab, venomSkillDef);
@@ -443,7 +443,7 @@ namespace AssassinMod.Survivors.Assassin
             pearlSkillDef.keywordTokens = new string[]
             {
                 "KEYWORD_AGILE",
-                "KEYWORD_TELEPORT_WC"
+                ASSASSIN_PREFIX + "KEYWORD_TELEPORT_WC"
             };
 
             Skills.AddUtilitySkills(bodyPrefab, pearlSkillDef);
@@ -480,7 +480,7 @@ namespace AssassinMod.Survivors.Assassin
             rollSkillDef.keywordTokens = new string[]
             {
                 "KEYWORD_AGILE",
-                "KEYWORD_ROLL_WC"
+                ASSASSIN_PREFIX + "KEYWORD_ROLL_WC"
             };
 
            Skills.AddUtilitySkills(bodyPrefab, rollSkillDef);
@@ -512,7 +512,7 @@ namespace AssassinMod.Survivors.Assassin
            decoySkillDef.keywordTokens = new string[]
            {
                "KEYWORD_AGILE",
-               "KEYWORD_DECOY_WC"
+               ASSASSIN_PREFIX + "KEYWORD_DECOY_WC"
            };
 
            Skills.AddUtilitySkills(bodyPrefab, decoySkillDef);

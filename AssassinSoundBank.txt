@@ -1,0 +1,44 @@
+Event	ID	Name			Wwise Object Path	Notes
+	256116300	Stop_poison_bubble_trail			\Default Work Unit\Stop_poison_bubble_trail	
+	589253524	Play_dagger_impact_enemy			\Default Work Unit\Play_dagger_impact_enemy	
+	1323361132	Play_dagger_sfx			\Default Work Unit\Play_dagger_sfx	
+	1432862898	Play_bottle_break			\Default Work Unit\Play_bottle_break	
+	3003923414	Play_dodgeroll			\Default Work Unit\Play_dodgeroll	
+	3277952656	Play_knife_draw2			\Default Work Unit\Play_knife_draw2	
+	3277952659	Play_knife_draw1			\Default Work Unit\Play_knife_draw1	
+	3471540763	Play_Backstab			\Default Work Unit\Play_Backstab	
+	3623482205	Play_ender_warp			\Default Work Unit\Play_ender_warp	
+	3850193945	Play_dagger_impact_ground			\Default Work Unit\Play_dagger_impact_ground	
+	4143708110	Play_land_impact			\Default Work Unit\Play_land_impact	
+
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	9336899	knife_launch_v2-001-001	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_launch_v2-001-001_BDC746FD.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ability_dagger\dagger_sfx\knife_launch_v2-001-001		6743
+	110581616	knife_impacts-001	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_impacts-001_552B1CC2.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\dagger_impact_ground\knife_impacts-001		19566
+	169760428	dodgerolls-001	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\dodgerolls-001_E7DEAE91.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\movment\dodgeroll\dodgerolls-001		7949
+	196518522	ability_poisonbomb_splash-004	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\ability_poisonbomb_splash-004_E4FACC6C.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ability_poison\poisonbomb_splash\ability_poisonbomb_splash-004		33127
+	214324312	knife_impact_mobs-002	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_impact_mobs-002_7CAE49B9.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\dagger_impact_enemy\knife_impact_mobs-002		9655
+	225130810	knife_draw2	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\MenuSounds\knife_draw2_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\knife_draw2		7485
+	267195190	knife_impacts-002	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_impacts-002_B4F5E5B7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\dagger_impact_ground\knife_impacts-002		13395
+	331437501	ability_poisonbomb_splash-001	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\ability_poisonbomb_splash-001_7E1DBB32.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ability_poison\poisonbomb_splash\ability_poisonbomb_splash-001		32942
+	370231960	assasinate_stabs-002	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\assasinate_stabs-002_BAD5614D.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\assasinate_stab_single\assasinate_stabs-002		17807
+	422647179	assasinate_stabs-001	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\assasinate_stabs-001_16B362EF.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\assasinate_stab_single\assasinate_stabs-001		21168
+	429546267	assasinate_stabs-004	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\assasinate_stabs-004_A59D5C48.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\assasinate_stab_single\assasinate_stabs-004		21421
+	472816785	knife_launch_v2-001-002	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_launch_v2-001-002_553BD828.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ability_dagger\dagger_sfx\knife_launch_v2-001-002		6560
+	487920671	ability_poisonbomb_splash-002	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\ability_poisonbomb_splash-002_A8BC268E.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ability_poison\poisonbomb_splash\ability_poisonbomb_splash-002		28708
+	502914310	knife_impacts-003	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_impacts-003_AA3FBF41.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\dagger_impact_ground\knife_impacts-003		12574
+	521876335	dodgerolls-002	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\dodgerolls-002_4111D6CC.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\movment\dodgeroll\dodgerolls-002		7324
+	531849417	knife_impacts-004	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_impacts-004_425FB5A7.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\dagger_impact_ground\knife_impacts-004		17991
+	583044895	ender_warp	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\ender_warp_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ender_warp		19502
+	593790117	assasinate_stabs-003	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\assasinate_stabs-003_2DE5046B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\assasinate_stab_single\assasinate_stabs-003		18112
+	640114822	poison_bubble_trail_loops	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\poison_bubble_trail_loops_2E80158E.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ability_poison\poison_bubble_trail\poison_bubble_trail_loops		148236
+	641424474	dodgerolls-003	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\dodgerolls-003_495B6C3A.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\movment\dodgeroll\dodgerolls-003		7607
+	667132525	ability_poisonbomb_splash-003	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\ability_poisonbomb_splash-003_D73FFBC5.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ability_poison\poisonbomb_splash\ability_poisonbomb_splash-003		34609
+	699099060	knife_impact_mobs-001	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_impact_mobs-001_FEF58C73.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\dagger_impact_enemy\knife_impact_mobs-001		9682
+	701123000	knife_draw1	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\MenuSounds\knife_draw1_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\knife_draw1		7053
+	782835156	knife_launch_v2-001-003	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_launch_v2-001-003_FF60F1D3.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\ability_dagger\dagger_sfx\knife_launch_v2-001-003		6803
+	845488663	land_impact	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\land_impact_EDCD4836.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\land_impact		5666
+	997379550	knife_impact_mobs-003	C:\Users\Bee_Snow\Documents\AssassinModWWISE\.cache\Windows\SFX\knife_impact_mobs-003_F944E63B.wem		\Actor-Mixer Hierarchy\Default Work Unit\SFX_Mixxer\dagger_impact_enemy\knife_impact_mobs-003		5657
+

@@ -34,13 +34,13 @@ namespace AssassinMod
     {
         public const string MODUID = "com.HasteReapr.AssassinMod";
         public const string MODNAME = "AssassinMod";
-        public const string MODVERSION = "2.0.5";
+        public const string MODVERSION = "2.2.2";
 
         public const string DEVELOPER_PREFIX = "HASTEREAPR";
 
         public static AssassinPlugin instance;
 
-        public static bool emoteAPILoaded => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
+        //public static bool emoteAPILoaded => BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
         public static bool scepterStandaloneLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
 
         void Awake()
@@ -59,13 +59,8 @@ namespace AssassinMod
             // Hooks into things like ServerOnTakeDamage
             Hook();
 
-            // Adds compatability for Emote API (Badass Emotes)
-            if (emoteAPILoaded)
-            {
-                EmoteAPICompat();
-            }
-
-            Logger.LogMessage("Emote API Loaded : " + emoteAPILoaded);
+            //handles all of the emoteAPI compatability stuff
+            if (EmoteAPICompat.enabled) EmoteAPICompat.EmoteHook();
 
             // Loads AssassinDecoy
             new AssassinDecoy().Create();
@@ -74,54 +69,12 @@ namespace AssassinMod
             new Modules.ContentPacks().Initialize();
         }
 
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void Hook()
         {
             On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
             On.RoR2.CharacterBody.OnTakeDamageServer += CharacterBody_OnTakeDamageServer;
             On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
-            if (emoteAPILoaded)
-            {
-                EmotesAPI.CustomEmotesAPI.animChanged += CustomEmotesAPI_animChanged;
-            }
-        }
-
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private void EmoteAPICompat()
-        {
-            On.RoR2.SurvivorCatalog.Init += (orig) =>
-            {
-                orig();
-                foreach (var item in SurvivorCatalog.allSurvivorDefs)
-                {
-                    if (item.bodyPrefab.name == "AssassinSurvivorBody")
-                    {
-                        var skele = AssassinAssets.emoteAPISkeleton;
-                        EmotesAPI.CustomEmotesAPI.ImportArmature(item.bodyPrefab, skele, jank: false);
-                        skele.GetComponentInChildren<BoneMapper>().scale = 1f;
-                    }
-                }
-            };
-        }
-
-        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
-        private void CustomEmotesAPI_animChanged(string newAnimation, BoneMapper mapper)
-        {
-            if (newAnimation != "none")
-            {
-                if (mapper.transform.name == "rogue_emote_skeleton" || mapper.transform.name == "rogue_emote_skeleton_tiny")
-                {
-                    mapper.transform.parent.GetComponent<ChildLocator>().FindChild("Knife_L").gameObject.SetActive(false);
-                    mapper.transform.parent.GetComponent<ChildLocator>().FindChild("Knife_R").gameObject.SetActive(false);
-                }
-            }
-            else
-            {
-                if (mapper.transform.name == "rogue_emote_skeleton" || mapper.transform.name == "rogue_emote_skeleton_tiny")
-                {
-                    mapper.transform.parent.GetComponent<ChildLocator>().FindChild("Knife_L").gameObject.SetActive(true);
-                    mapper.transform.parent.GetComponent<ChildLocator>().FindChild("Knife_R").gameObject.SetActive(true);
-                }
-            }
         }
 
         private void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
@@ -212,7 +165,8 @@ namespace AssassinMod
             // If the victim is hit by any of the poison stuff
             if (DamageAPI.HasModdedDamageType(damageReport.damageInfo, AssassinAssets.poisonDmgType))
             {
-                DotController.InflictDot(self.gameObject, damageReport.attacker, AssassinBuffs.poisonDoT, 10, 0.1f);
+                DotController.InflictDot(self.gameObject, damageReport.attacker, AssassinBuffs.poisonDoT, 10, 0.3f);
+                //DotController.InflictDot(self.gameObject, damageReport.attacker, AssassinBuffs.poisonDoT);
             }
 
             // If the victim is hit by the smokebomb AOE apply stun

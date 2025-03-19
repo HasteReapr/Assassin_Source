@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 3033151896
+CRC: 4131444059
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 8d592ac1e8cc6b5cabb9ad263174027a
+    Hash: ae431e0c7d6eb0c9bca6cf40bae991fa
   TypeTreeHash:
     serializedVersion: 2
-    Hash: dc85f1fe2ac98b34efae05f6a3b9edc9
+    Hash: 10e9f4ffd09de18c38076b9e8b593268
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -40,14 +40,34 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
-  Script: {fileID: 11500000, guid: 9a68da65c907acb4eb4dbcd042f172e7, type: 3}
+  Script: {fileID: 1783796254, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
-  Script: {fileID: 11500000, guid: fc41cd48bee14034db80323ab44fbd3e, type: 3}
+  Script: {fileID: -1294804675, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1848696948, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: 1790887305, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -848926067, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -270136354, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1819008361, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
+- Class: 114
+  Script: {fileID: -1895344032, guid: 951ce57ad999ac1f040a4dceb5f8b763, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 261c50d8a80898e4ebf2e8e415ea6766, type: 3}
 - Class: 114
+  Script: {fileID: 372142912, guid: d382a022563c7517aadbc92ca1060016, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 751bd37d2e55f5f448dbb0d97812d9ba, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 9a68da65c907acb4eb4dbcd042f172e7, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: fc41cd48bee14034db80323ab44fbd3e, type: 3}
 - Class: 115
+  Script: {instanceID: 0}
+- Class: 135
   Script: {instanceID: 0}
 - Class: 136
   Script: {instanceID: 0}
@@ -63,78 +83,91 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 319
   Script: {instanceID: 0}
-SerializeReferenceClassIdentifiers: []
+SerializeReferenceClassIdentifiers:
+- AssemblyName: Assembly-CSharp
+  ClassName: ChildLocator/NameTransformPair
+- AssemblyName: RoR2
+  ClassName: RoR2.DamageTypeCombo
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.PersistentCallGroup
+- AssemblyName: UnityEngine.CoreModule
+  ClassName: UnityEngine.Events.UnityEvent
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkHash128
+- AssemblyName: com.unity.multiplayer-hlapi.Runtime
+  ClassName: UnityEngine.Networking.NetworkSceneId
 Assets:
+- Assets/AssassinAssets/Textures/texAssassinIcon_Old.png
+- Assets/AssassinAssets/Textures/texDecoyUtilityIcon.png
+- Assets/AssassinAssets/Textures/texMainSkin.png
+- Assets/AssassinAssets/assassinDisplay.prefab
+- Assets/AssassinAssets/Textures/texFireMask.png
+- Assets/AssassinAssets/poison_ailment.prefab
+- Assets/AssassinAssets/Textures/texPrimaryIconScepter.png
+- Assets/AssassinAssets/defaultChest.mesh
+- Assets/AssassinAssets/Animation/animAssassinMenu.controller
+- Assets/AssassinAssets/mdlRecursivePoison.prefab
 - Assets/AssassinAssets/mdlAssassin.prefab
-- Assets/AssassinAssets/Textures/texSpecialIconScepter.png
-- Assets/AssassinAssets/Textures/texDrugsBuff.png
-- Assets/AssassinAssets/GrandMasteryKnife.mesh
-- Assets/AssassinAssets/poisonExplosionEffect.prefab
 - Assets/AssassinAssets/smokeExplosionEffect.prefab
+- Assets/AssassinAssets/Projectiles/virulent_DOT_Zone.prefab
+- Assets/AssassinAssets/rogue_emote_skeleton.prefab
+- Assets/AssassinAssets/GrandMasteryKnife.mesh
+- Assets/AssassinAssets/Assassin_EmoteSkeleton.prefab
+- Assets/AssassinAssets/Textures/texDrugsBuff.png
+- Assets/AssassinAssets/Textures/texAltSecondaryIcon.png
 - Assets/AssassinAssets/Textures/texPoisonPassiveIcon.png
 - Assets/AssassinAssets/masteryAura.prefab
-- Assets/AssassinAssets/Textures/texAltSecondaryIcon.png
-- Assets/AssassinAssets/Textures/texPrimaryIconScepter.png
+- Assets/AssassinAssets/Materials/assassinMtrl.mat
+- Assets/AssassinAssets/defaultKnife.mesh
+- Assets/AssassinAssets/Textures/texSpecialIcon.png
+- Assets/AssassinAssets/MasteryKnife.mesh
+- Assets/AssassinAssets/Textures/texDecoyPassiveIcon.png
+- Assets/AssassinAssets/GrandMasteryCloak.mesh
+- Assets/AssassinAssets/Textures/texUtilityIcon.png
+- Assets/AssassinAssets/polarity_Embers.prefab
+- Assets/AssassinAssets/mdlPoison.prefab
+- Assets/AssassinAssets/Animation/animAssassin.controller
+- Assets/AssassinAssets/mdlKnife.prefab
+- Assets/AssassinAssets/Textures/texPassiveIcon.png
+- Assets/AssassinAssets/knife_trail.prefab
+- Assets/AssassinAssets/mdlKnifeGrandMastery.prefab
+- Assets/AssassinAssets/Animation/AssassinMaskGesture.mask
+- Assets/AssassinAssets/rogue_emote_skeleton_tiny.prefab
+- Assets/AssassinAssets/smokeBomb_trial.prefab
+- Assets/AssassinAssets/mdlSmokeBomb.prefab
+- Assets/AssassinAssets/MasteryCloak.mesh
+- Assets/AssassinAssets/Textures/texSecondaryIcon.png
+- Assets/AssassinAssets/Textures/texAssassinIcon.png
+- Assets/AssassinAssets/mdlVenom.prefab
+- Assets/AssassinAssets/venom_trail.prefab
+- Assets/AssassinAssets/virulentExplosionEffect.prefab
+- Assets/AssassinAssets/Textures/texAltUtilityIcon.png
+- Assets/AssassinAssets/Textures/texGrandMasterySkin.png
+- Assets/AssassinAssets/poisonExplosionEffect.prefab
+- Assets/AssassinAssets/mdlKnifeMastery.prefab
+- Assets/AssassinAssets/Textures/texGhostlyPrimaryIcon.png
+- Assets/AssassinAssets/Materials/assassinMasteryMtrl.mat
+- Assets/AssassinAssets/recursive_trail.prefab
+- Assets/AssassinAssets/mdlTpPotion.prefab
+- Assets/AssassinAssets/grandMasteryAura.prefab
+- Assets/AssassinAssets/Textures/texGlowSkullMask.png
+- Assets/AssassinAssets/Textures/texSpecialIconScepter.png
+- Assets/AssassinAssets/Animation/AssassinMaskAimPitch.mask
+- Assets/AssassinAssets/defaultCloak.mesh
+- Assets/AssassinAssets/assassinBottleBreak.prefab
+- Assets/AssassinAssets/Textures/texToxinCooldown.png
+- Assets/AssassinAssets/Textures/texMasterySkin.png
 - Assets/AssassinAssets/poison_trail.prefab
 - Assets/AssassinAssets/Animation/AssassinMaskAimYaw.mask
-- Assets/AssassinAssets/Materials/assassinMasteryMtrl.mat
-- Assets/AssassinAssets/Textures/texAssassinIcon.png
-- Assets/AssassinAssets/Textures/texFireMask.png
-- Assets/AssassinAssets/MasteryKnife.mesh
-- Assets/AssassinAssets/Textures/texAltUtilityIcon.png
-- Assets/AssassinAssets/Textures/texDecoyPassiveIcon.png
-- Assets/AssassinAssets/Animation/AssassinMaskGesture.mask
-- Assets/AssassinAssets/knife_trail.prefab
-- Assets/AssassinAssets/enderPearlEffect.prefab
 - Assets/AssassinAssets/Textures/texBuffSuperBleedIcon.png
-- Assets/AssassinAssets/Materials/assassinMtrl.mat
-- Assets/AssassinAssets/GrandMasteryCloak.mesh
-- Assets/AssassinAssets/mdlRecursivePoison.prefab
-- Assets/AssassinAssets/Textures/texAltSpecialIcon.png
-- Assets/AssassinAssets/Assassin_EmoteSkeleton.prefab
-- Assets/AssassinAssets/mdlKnifeMastery.prefab
-- Assets/AssassinAssets/Animation/AssassinMaskAimPitch.mask
-- Assets/AssassinAssets/Textures/texMainSkin.png
-- Assets/AssassinAssets/Textures/texSpecialIcon.png
-- Assets/AssassinAssets/Textures/texPassiveIcon.png
-- Assets/AssassinAssets/assassinBottleBreak.prefab
-- Assets/AssassinAssets/polarity_Embers.prefab
-- Assets/AssassinAssets/Textures/texMasterySkin.png
-- Assets/AssassinAssets/mdlKnife.prefab
-- Assets/AssassinAssets/Materials/assassinGMMaterial.mat
-- Assets/AssassinAssets/Textures/texUtilityIcon.png
-- Assets/AssassinAssets/assassinDisplay.prefab
-- Assets/AssassinAssets/poison_ailment.prefab
-- Assets/AssassinAssets/mdlKnifeGrandMastery.prefab
-- Assets/AssassinAssets/mdlVenom.prefab
-- Assets/AssassinAssets/MasteryChest.mesh
-- Assets/AssassinAssets/recursive_trail.prefab
 - Assets/AssassinAssets/Textures/texSecondaryIconScepter.png
-- Assets/AssassinAssets/virulentExplosionEffect.prefab
-- Assets/AssassinAssets/Textures/texSecondaryIcon.png
-- Assets/AssassinAssets/MasteryCloak.mesh
-- Assets/AssassinAssets/Textures/texToxinCooldown.png
 - Assets/AssassinAssets/GrandMasteryChest.mesh
-- Assets/AssassinAssets/defaultCloak.mesh
-- Assets/AssassinAssets/Textures/texGrandMasterySkin.png
-- Assets/AssassinAssets/Textures/texGhostlyPrimaryIcon.png
-- Assets/AssassinAssets/mdlPoison.prefab
-- Assets/AssassinAssets/rogue_emote_skeleton.prefab
-- Assets/AssassinAssets/Textures/texDecoyUtilityIcon.png
-- Assets/AssassinAssets/mdlSmokeBomb.prefab
-- Assets/AssassinAssets/Animation/animAssassinMenu.controller
-- Assets/AssassinAssets/Textures/texAltScepterSecondaryIcon.png
-- Assets/AssassinAssets/grandMasteryAura.prefab
 - Assets/AssassinAssets/Materials/mtrlGlow.mat
-- Assets/AssassinAssets/venom_trail.prefab
-- Assets/AssassinAssets/defaultChest.mesh
-- Assets/AssassinAssets/smokeBomb_trial.prefab
-- Assets/AssassinAssets/Textures/texAssassinIcon_Old.png
-- Assets/AssassinAssets/rogue_emote_skeleton_tiny.prefab
-- Assets/AssassinAssets/Textures/texGlowSkullMask.png
-- Assets/AssassinAssets/Animation/animAssassin.controller
-- Assets/AssassinAssets/Animation/AssassinMaskImpact.mask
-- Assets/AssassinAssets/mdlTpPotion.prefab
-- Assets/AssassinAssets/defaultKnife.mesh
 - Assets/AssassinAssets/Textures/texPrimaryIcon.png
+- Assets/AssassinAssets/MasteryChest.mesh
+- Assets/AssassinAssets/Textures/texAltScepterSecondaryIcon.png
+- Assets/AssassinAssets/Materials/assassinGMMaterial.mat
+- Assets/AssassinAssets/enderPearlEffect.prefab
+- Assets/AssassinAssets/Animation/AssassinMaskImpact.mask
+- Assets/AssassinAssets/Textures/texAltSpecialIcon.png
 Dependencies: []

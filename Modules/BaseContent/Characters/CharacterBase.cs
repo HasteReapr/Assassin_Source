@@ -30,7 +30,7 @@ namespace AssassinMod.Modules.Characters
         public virtual void Initialize()
         {
             instance = this as T;
-            assetBundle = Assets.LoadAssetBundle(assetBundleName);
+            assetBundle = AsnAssets.LoadAssetBundle(assetBundleName);
 
             InitializeCharacter();
         }

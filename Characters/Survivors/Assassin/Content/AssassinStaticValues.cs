@@ -13,7 +13,7 @@ namespace AssassinMod.Survivors.Assassin
 
         public const float poisonDOTDamageCoef = 5f;
 
-        public const float venomDamageCoef = 5f;
+        public const float venomDamageCoef = 12.5f; //5
 
         public const float backstabDamageCoef = 7.5f;
 

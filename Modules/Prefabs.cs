@@ -35,7 +35,7 @@ namespace AssassinMod.Modules
             }
             characterModel.baseRendererInfos = prefab.GetComponentInChildren<CharacterModel>().baseRendererInfos;
 
-            Modules.Assets.ConvertAllRenderersToHopooShader(display);
+            Modules.AsnAssets.ConvertAllRenderersToHopooShader(display);
 
             return display;
         }
@@ -308,8 +308,8 @@ namespace AssassinMod.Modules
             characterModel.body = bodyPrefab.GetComponent<CharacterBody>();
 
             characterModel.autoPopulateLightInfos = true;
-            characterModel.invisibilityCount = 0;
-            characterModel.temporaryOverlays = new List<TemporaryOverlay>();
+            characterModel.invisibilityCount = 0; 
+            characterModel.temporaryOverlays = new List<TemporaryOverlayInstance>();
 
             if (!preattached)
             {

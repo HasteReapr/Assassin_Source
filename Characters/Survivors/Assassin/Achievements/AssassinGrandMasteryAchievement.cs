@@ -3,7 +3,7 @@ using AssassinMod.Modules.Achievements;
 
 namespace AssassinMod.Survivors.Assassin.Achievements
 {
-    [RegisterAchievement(identifier, unlockableIdentifier, null, null)]
+    [RegisterAchievement(identifier, unlockableIdentifier, null, 10, null)]
     public class AssassinGrandMasteryAchievement : BaseMasteryAchievement
     {
         public const string identifier = AssassinPlr.ASSASSIN_PREFIX + "grandMasteryAchievement";

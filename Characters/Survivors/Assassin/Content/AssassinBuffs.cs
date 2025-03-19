@@ -59,7 +59,7 @@ namespace AssassinMod.Survivors.Assassin
 
             madGodBuff = Modules.Content.CreateAndAddBuff("MadGodBuff",
                 LegacyResourcesAPI.Load<BuffDef>("BuffDefs/HiddenInvincibility").iconSprite, //make the thing do the thing as above
-                                                                                             //Assets.mainAssetBundle.LoadAsset<Sprite>("texFireMask"),
+                                                                                             //AsnAssets.mainAssetBundle.LoadAsset<Sprite>("texFireMask"),
                 Color.black,
                 true,
                 false
@@ -72,7 +72,7 @@ namespace AssassinMod.Survivors.Assassin
         {
             var poisonDef = new DotController.DotDef
             {
-                interval = 0.1f,
+                interval = 0.3f,
                 damageCoefficient = AssassinStaticValues.poisonDOTDamageCoef,
                 damageColorIndex = DamageColorIndex.Poison,
                 associatedBuff = poisonDebuff,

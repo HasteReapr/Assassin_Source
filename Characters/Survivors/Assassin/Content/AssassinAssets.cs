@@ -78,10 +78,10 @@ namespace AssassinMod.Survivors.Assassin
         #region effects
         private static void CreateEffects()
         {
-            poisonExplosionEffect = Assets.LoadEffect(_assetBundle, "poisonExplosionEffect", "Play_bottle_break");
-            venomExplosionEffect = Assets.LoadEffect(_assetBundle, "virulentExplosionEffect", "Play_bottle_break");
-            smokeExplosionEffect = Assets.LoadEffect(_assetBundle, "smokeExplosionEffect", "Play_bottle_break");
-            pearlImpactEffect = Assets.LoadEffect(_assetBundle, "enderPearlEffect", "Play_ender_warp");
+            poisonExplosionEffect = AsnAssets.LoadEffect(_assetBundle, "poisonExplosionEffect", "Play_bottle_break");
+            venomExplosionEffect = AsnAssets.LoadEffect(_assetBundle, "virulentExplosionEffect", "Play_bottle_break");
+            smokeExplosionEffect = AsnAssets.LoadEffect(_assetBundle, "smokeExplosionEffect", "Play_bottle_break");
+            pearlImpactEffect = AsnAssets.LoadEffect(_assetBundle, "enderPearlEffect", "Play_ender_warp");
 
             knifeTrail = _assetBundle.LoadAsset<GameObject>("knife_trail");
             masteryKnifeTrail = _assetBundle.LoadAsset<GameObject>("masteryAura");
@@ -111,7 +111,7 @@ namespace AssassinMod.Survivors.Assassin
             CreatePoison();
             Content.AddProjectilePrefab(poison);
 
-            virulentDOTZone = Assets.projBundle.LoadAsset<GameObject>("virulent_DOT_Zone");
+            virulentDOTZone = _assetBundle.LoadAsset<GameObject>("virulent_DOT_Zone");
             Content.AddProjectilePrefab(virulentDOTZone);
 
             CreateVirulentPoison();
@@ -132,7 +132,7 @@ namespace AssassinMod.Survivors.Assassin
 
         private static void CreateDagger()
         {
-            dagger = Assets.CloneProjectilePrefab("Bandit2ShivProjectile", "dagger");
+            dagger = AsnAssets.CloneProjectilePrefab("Bandit2ShivProjectile", "dagger");
 
             dagger.GetComponent<ProjectileDamage>().damageType = DamageType.Generic;
             dagger.AddComponent<ModdedDamageTypeHolderComponent>().Add(daggerDmgType);
@@ -152,9 +152,9 @@ namespace AssassinMod.Survivors.Assassin
 
             daggerController.GetComponent<ProjectileStickOnImpact>().alignNormals = false;
 
-            daggerController.ghostPrefab = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnife");
-            masteryDagger = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnifeMastery");
-            grandMasteryDagger = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnifeGrandMastery");
+            daggerController.ghostPrefab = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnife");
+            masteryDagger = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnifeMastery");
+            grandMasteryDagger = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnifeGrandMastery");
 
             var knifeTrailDupe = knifeTrail;
             knifeTrailDupe.transform.parent = daggerController.ghostPrefab.transform;
@@ -170,7 +170,7 @@ namespace AssassinMod.Survivors.Assassin
 
         private static void CreateCutter()
         {
-            cutter = Assets.CloneProjectilePrefab("Bandit2ShivProjectile", "cutter");
+            cutter = AsnAssets.CloneProjectilePrefab("Bandit2ShivProjectile", "cutter");
 
             cutter.GetComponent<ProjectileDamage>().damageType = DamageType.Generic;
             cutter.AddComponent<ModdedDamageTypeHolderComponent>().Add(daggerDmgType);
@@ -190,9 +190,9 @@ namespace AssassinMod.Survivors.Assassin
 
             daggerController.GetComponent<ProjectileStickOnImpact>().alignNormals = false;
 
-            daggerController.ghostPrefab = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnife");
-            masteryDagger = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnifeMastery");
-            grandMasteryDagger = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnifeGrandMastery");
+            daggerController.ghostPrefab = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnife");
+            masteryDagger = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnifeMastery");
+            grandMasteryDagger = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlKnifeGrandMastery");
 
             var knifeTrailDupe = knifeTrail;
             knifeTrailDupe.transform.parent = daggerController.ghostPrefab.transform;
@@ -208,7 +208,7 @@ namespace AssassinMod.Survivors.Assassin
 
         private static void CreatePoison()
         {
-            poison = Assets.CloneProjectilePrefab("CommandoGrenadeProjectile", "poison");
+            poison = AsnAssets.CloneProjectilePrefab("CommandoGrenadeProjectile", "poison");
 
             poison.AddComponent<ModdedDamageTypeHolderComponent>().Add(poisonDmgType);
 
@@ -221,7 +221,7 @@ namespace AssassinMod.Survivors.Assassin
             ProjectileImpactExplosion poisonExplosion = poison.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(poisonExplosion);
 
-            //EffectComponent effectComponent = Assets.poisonExplosionEffect.GetComponent<EffectComponent>();
+            //EffectComponent effectComponent = AsnAssets.poisonExplosionEffect.GetComponent<EffectComponent>();
             //effectComponent.soundName = "assassinBottleBreak";
 
             poisonExplosion.GetComponent<ModdedDamageTypeHolderComponent>().Add(poisonDmgType);
@@ -234,9 +234,9 @@ namespace AssassinMod.Survivors.Assassin
             poisonExplosion.lifetimeAfterImpact = 0.5f;
 
             ProjectileController poisonController = poison.GetComponent<ProjectileController>();
-            if (_assetBundle.LoadAsset<GameObject>("mdlPoison") != null) poisonController.ghostPrefab = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlPoison");
+            if (_assetBundle.LoadAsset<GameObject>("mdlPoison") != null) poisonController.ghostPrefab = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlPoison");
 
-            //poisonController.ghostPrefab.transform.Find("poison_trail").GetComponent<ParticleSystemRenderer>().SetMaterial(Assets.smokeTrailMat);
+            //poisonController.ghostPrefab.transform.Find("poison_trail").GetComponent<ParticleSystemRenderer>().SetMaterial(AsnAssets.smokeTrailMat);
 
             var poisonTrailDupe = poisonTrail;
             poisonTrailDupe.transform.parent = poisonController.ghostPrefab.transform;
@@ -248,7 +248,7 @@ namespace AssassinMod.Survivors.Assassin
 
         private static void CreateVirulentPoison()
         {
-            virulentPoison = Assets.CloneProjectilePrefab("CommandoGrenadeProjectile", "virulentVenom");
+            virulentPoison = AsnAssets.CloneProjectilePrefab("CommandoGrenadeProjectile", "virulentVenom");
 
             Rigidbody virulentRigidBody = virulentPoison.GetComponent<Rigidbody>();
             if (!virulentRigidBody)
@@ -271,7 +271,7 @@ namespace AssassinMod.Survivors.Assassin
             virulentPoison.AddComponent<virulentOnHit>();
 
             ProjectileController virulentController = virulentPoison.GetComponent<ProjectileController>();
-            if (_assetBundle.LoadAsset<GameObject>("mdlVenom") != null) virulentController.ghostPrefab = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlVenom");
+            if (_assetBundle.LoadAsset<GameObject>("mdlVenom") != null) virulentController.ghostPrefab = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlVenom");
 
             var poisonTrailDupe = venomTrail;
             poisonTrailDupe.transform.parent = virulentController.ghostPrefab.transform;
@@ -307,7 +307,7 @@ namespace AssassinMod.Survivors.Assassin
 
         private static void CreateRecursivePoison()
         {
-            clusterPoison = Assets.CloneProjectilePrefab("CommandoGrenadeProjectile", "recursivePoison");
+            clusterPoison = AsnAssets.CloneProjectilePrefab("CommandoGrenadeProjectile", "recursivePoison");
 
             clusterPoison.AddComponent<ModdedDamageTypeHolderComponent>().Add(poisonDmgType);
             clusterPoison.AddComponent<recursiveOnHit>();
@@ -321,7 +321,7 @@ namespace AssassinMod.Survivors.Assassin
             ProjectileImpactExplosion poisonExplosion = clusterPoison.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(poisonExplosion);
 
-            //EffectComponent effectComponent = Assets.poisonExplosionEffect.GetComponent<EffectComponent>();
+            //EffectComponent effectComponent = AsnAssets.poisonExplosionEffect.GetComponent<EffectComponent>();
             //effectComponent.soundName = "assassinBottleBreak";
 
             poisonExplosion.GetComponent<ModdedDamageTypeHolderComponent>().Add(poisonDmgType);
@@ -329,13 +329,13 @@ namespace AssassinMod.Survivors.Assassin
             poisonExplosion.destroyOnEnemy = true;
             poisonExplosion.destroyOnWorld = true;
             poisonExplosion.impactEffect = poisonExplosionEffect;
-            //poisonExplosion.explosionSoundString = Assets.poisonExplosionEffect;
+            //poisonExplosion.explosionSoundString = AsnAssets.poisonExplosionEffect;
             poisonExplosion.lifetime = 12f;
             poisonExplosion.timerAfterImpact = true;
             poisonExplosion.lifetimeAfterImpact = 0.5f;
 
             ProjectileController poisonController = clusterPoison.GetComponent<ProjectileController>();
-            if (_assetBundle.LoadAsset<GameObject>("mdlRecursivePoison") != null) poisonController.ghostPrefab = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlRecursivePoison");
+            if (_assetBundle.LoadAsset<GameObject>("mdlRecursivePoison") != null) poisonController.ghostPrefab = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlRecursivePoison");
 
             poisonController.rigidbody = poisonRigidBody;
             poisonController.rigidbody.useGravity = true;
@@ -398,7 +398,7 @@ namespace AssassinMod.Survivors.Assassin
 
         private static void CreateRecursiveClusterPoison()
         {
-            recursivePoison = Assets.CloneProjectilePrefab("CommandoGrenadeProjectile", "recursivePoison");
+            recursivePoison = AsnAssets.CloneProjectilePrefab("CommandoGrenadeProjectile", "recursivePoison");
 
             recursivePoison.AddComponent<ModdedDamageTypeHolderComponent>().Add(poisonDmgType);
             recursivePoison.AddComponent<recursiveClusterOnHit>();
@@ -412,7 +412,7 @@ namespace AssassinMod.Survivors.Assassin
             ProjectileImpactExplosion poisonExplosion = recursivePoison.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(poisonExplosion);
 
-            //EffectComponent effectComponent = Assets.poisonExplosionEffect.GetComponent<EffectComponent>();
+            //EffectComponent effectComponent = AsnAssets.poisonExplosionEffect.GetComponent<EffectComponent>();
             //effectComponent.soundName = "assassinBottleBreak";
 
             poisonExplosion.GetComponent<ModdedDamageTypeHolderComponent>().Add(poisonDmgType);
@@ -420,13 +420,13 @@ namespace AssassinMod.Survivors.Assassin
             poisonExplosion.destroyOnEnemy = true;
             poisonExplosion.destroyOnWorld = true;
             poisonExplosion.impactEffect = poisonExplosionEffect;
-            //poisonExplosion.explosionSoundString = Assets.poisonExplosionEffect;
+            //poisonExplosion.explosionSoundString = AsnAssets.poisonExplosionEffect;
             poisonExplosion.lifetime = 12f;
             poisonExplosion.timerAfterImpact = true;
             poisonExplosion.lifetimeAfterImpact = 0.5f;
 
             ProjectileController poisonController = recursivePoison.GetComponent<ProjectileController>();
-            if (_assetBundle.LoadAsset<GameObject>("mdlRecursivePoison") != null) poisonController.ghostPrefab = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlRecursivePoison");
+            if (_assetBundle.LoadAsset<GameObject>("mdlRecursivePoison") != null) poisonController.ghostPrefab = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlRecursivePoison");
 
             poisonController.rigidbody = poisonRigidBody;
             poisonController.rigidbody.useGravity = true;
@@ -489,7 +489,7 @@ namespace AssassinMod.Survivors.Assassin
 
         private static void CreateEnderPearl()
         {
-            enderPearl = Assets.CloneProjectilePrefab("CommandoGrenadeProjectile", "enderPearl");
+            enderPearl = AsnAssets.CloneProjectilePrefab("CommandoGrenadeProjectile", "enderPearl");
 
             Rigidbody enderPearlRigidBody = enderPearl.GetComponent<Rigidbody>();
             if (!enderPearlRigidBody)
@@ -509,7 +509,7 @@ namespace AssassinMod.Survivors.Assassin
             pearlExplosion.impactEffect = pearlImpactEffect;
 
             ProjectileController enderPearlController = enderPearl.GetComponent<ProjectileController>();
-            if (_assetBundle.LoadAsset<GameObject>("mdlTpPotion") != null) enderPearlController.ghostPrefab = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlTpPotion");
+            if (_assetBundle.LoadAsset<GameObject>("mdlTpPotion") != null) enderPearlController.ghostPrefab = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlTpPotion");
 
             var poisonTrailDupe = pearlTrail;
             poisonTrailDupe.transform.parent = enderPearlController.ghostPrefab.transform;
@@ -521,7 +521,7 @@ namespace AssassinMod.Survivors.Assassin
 
         private static void CreateCloudyPotion()
         {
-            cloudyPotion = Assets.CloneProjectilePrefab("CommandoGrenadeProjectile", "smokeBomb");
+            cloudyPotion = AsnAssets.CloneProjectilePrefab("CommandoGrenadeProjectile", "smokeBomb");
 
             cloudyPotion.GetComponent<ProjectileDamage>().damageType = DamageType.Stun1s;
             cloudyPotion.AddComponent<ModdedDamageTypeHolderComponent>().Add(smokeDmgType);
@@ -545,7 +545,7 @@ namespace AssassinMod.Survivors.Assassin
             cloudExplosion.lifetimeAfterImpact = 0.5f;
 
             ProjectileController cloudController = cloudyPotion.GetComponent<ProjectileController>();
-            if (_assetBundle.LoadAsset<GameObject>("mdlSmokeBomb") != null) cloudController.ghostPrefab = Assets.CreateProjectileGhostPrefab(_assetBundle, "mdlSmokeBomb");
+            if (_assetBundle.LoadAsset<GameObject>("mdlSmokeBomb") != null) cloudController.ghostPrefab = AsnAssets.CreateProjectileGhostPrefab(_assetBundle, "mdlSmokeBomb");
 
             GameObject smokeTrailDupe = smokeTrail;
             smokeTrailDupe.transform.parent = cloudController.ghostPrefab.transform;

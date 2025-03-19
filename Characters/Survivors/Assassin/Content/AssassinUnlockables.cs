@@ -13,7 +13,7 @@ namespace AssassinMod.Survivors.Assassin
 
         public static void Init()
         {
-            masterySkinUnlockableDef = Modules.Content.CreateAndAddUnlockbleDef(
+            /*masterySkinUnlockableDef = Modules.Content.CreateAndAddUnlockbleDef(
                 AssassinMasteryAchievement.unlockableIdentifier,
                 Modules.Tokens.GetAchievementNameToken(AssassinMasteryAchievement.identifier),
                 AssassinPlr.instance.assetBundle.LoadAsset<Sprite>("texMasterySkin"));
@@ -26,6 +26,16 @@ namespace AssassinMod.Survivors.Assassin
             poisonAchievementUnlockableDef= Modules.Content.CreateAndAddUnlockbleDef(
                 AssassinPoisonAchievement.unlockableIdentifier,
                 Modules.Tokens.GetAchievementNameToken(AssassinPoisonAchievement.identifier),
+                AssassinPlr.instance.assetBundle.LoadAsset<Sprite>("texGrandMasterySkin"));*/
+
+            masterySkinUnlockableDef = Modules.Content.CreateAndAddUnlockbleDef(
+                AssassinMasteryAchievement.unlockableIdentifier,
+                Modules.Tokens.GetAchievementNameToken(AssassinMasteryAchievement.identifier),
+                AssassinPlr.instance.assetBundle.LoadAsset<Sprite>("texMasterySkin"));
+
+            grandMasterySkinUnlockableDef = Modules.Content.CreateAndAddUnlockbleDef(
+                AssassinGrandMasteryAchievement.unlockableIdentifier,
+                Modules.Tokens.GetAchievementNameToken(AssassinGrandMasteryAchievement.identifier),
                 AssassinPlr.instance.assetBundle.LoadAsset<Sprite>("texGrandMasterySkin"));
         }
     }
